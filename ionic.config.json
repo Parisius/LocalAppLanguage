@@ -2,5 +2,7 @@
   "name": "localapplanguage",
   "app_id": "086f5363",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

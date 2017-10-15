@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Accueil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  id="page1" padding style="background-color:rgb(255, 255, 255);">
+  <ion-list id="accueil-list1">
+    <ion-item color="none" on-click="goToAlphabet()" id="accueil-list-item1">
+      <ion-thumbnail item-left>
+        <img src="assets/img/Q9vSHGCkS6SYhUKJ7uVS_QPyuBpuhTKul76K0ESwx_a-1708752_960_720.png" />
+      </ion-thumbnail>
+      <h2>
+        Alphabet
+      </h2>
+      <p style="white-space:normal;">L'aphabet en langue fon</p>
+      <!--<button ion-button icon-only item-right>-->
+        <ion-icon name="arrow-forward" item-right></ion-icon>
+      <!--</button>-->
+      
+    </ion-item>
+    <ion-item color="none" on-click="goToChiffres()" id="accueil-list-item2">
+      <ion-thumbnail item-left>
+        <img src="assets/img/6panfKoTQQKl2RhYWJeH_ux4UwDIdTgaXuEl9W0vS_123.png" />
+      </ion-thumbnail>
+      <h2>
+        Chiffres
+      </h2>
+      <p style="white-space:normal;">Les chiffres en fon</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+    <ion-item color="none" on-click="goToAliments()" id="accueil-list-item3">
+      <ion-thumbnail item-left>
+        <img src="assets/img/oXc0j4swSqK6kQz2G1Il_fVcHOioYRkSwJrE6CFhw_images.jpg" />
+      </ion-thumbnail>
+      <h2>
+        Aliments
+      </h2>
+      <p style="white-space:normal;">Les aliments en fon</p>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
+  <button id="accueil-button1"  ion-button color="positive" block icon-left style="font-size:25px;border-radius:40px 40px 40px 40px;" on-click="goToPartager()">
+    <ion-icon name="share-alt"></ion-icon>
+    Recommander
+  </button>
+  <br><br><br><br><br><br><br>
+  <div class="spacer" style="height:70;" id="accueil-spacer3"></div>
+  <h4 id="accueil-heading4" style="color:#000000;text-align:center;">
+    Nom et Prénoms du commanditaire
+  </h4>
+  <div id="accueil-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      Contact du commanditaire
+    </p>
+  </div>
+</ion-content>
