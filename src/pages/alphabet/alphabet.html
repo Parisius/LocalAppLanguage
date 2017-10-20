@@ -16,10 +16,7 @@
           Voyelles
         </ion-option>
         <ion-option>
-          Consonnes
-        </ion-option>
-        <ion-option>
-          Semi-Consonnes
+          Consonnes et Semi-Consonnes
         </ion-option>
       </ion-select>
     </ion-item>
@@ -33,7 +30,7 @@
     <ion-list id="alphabet-list5">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/a.png" />
         </ion-thumbnail>
         <h2>
           a
@@ -47,7 +44,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/i.png"/>
         </ion-thumbnail>
         <h2>
           i
@@ -62,7 +59,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/ɛ.png"/>
         </ion-thumbnail>
         <h2>
           ɛ
@@ -77,7 +74,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/e.png"/>
         </ion-thumbnail>
         <h2>
           e
@@ -93,7 +90,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/u.png"/>
         </ion-thumbnail>
         <h2>
           u
@@ -109,7 +106,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/ɔ.png"/>
         </ion-thumbnail>
         <h2>
           ɔ
@@ -125,7 +122,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/o.png" />
         </ion-thumbnail>
         <h2>
           o
@@ -141,7 +138,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/an.png" />
         </ion-thumbnail>
         <h2>
           an
@@ -157,7 +154,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/ɔn.png" />
         </ion-thumbnail>
         <h2>
           ɔn
@@ -173,7 +170,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/on.png" />
         </ion-thumbnail>
         <h2>
           on
@@ -188,7 +185,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img  src= "assets/img/ɛn.png"/>
         </ion-thumbnail>
         <h2>
           ɛn
@@ -203,7 +200,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/un.png"/>
         </ion-thumbnail>
         <h2>
          un
@@ -218,7 +215,7 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item4">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/in.png"/>
         </ion-thumbnail>
         <h2>
           in
@@ -240,35 +237,311 @@
     <ion-list id="alphabet-list6">
       <ion-item color="none" id="alphabet-list-item5">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/b.png"/>
         </ion-thumbnail>
         <h2>
          b
         </h2>
         <p>b comme dans bouche</p>
-        <button ion-button icon-only item-right round outline>
+        <button ion-button icon-only item-right round outline (click)='playb()'>
           <ion-icon name="volume-up" ></ion-icon>
         </button>
       </ion-item>
-    </ion-list>
-  </div>
-  <div id="alphabet-container3">
-    <h2 id="alphabet-heading3" style="color:#2A7DDF;text-align:center;">
-      Semi-Consonnes
-    </h2>
-    <ion-list id="alphabet-list7">
-      <ion-item color="none" id="alphabet-list-item6">
+      <ion-item color="none" id="alphabet-list-item5">
         <ion-thumbnail item-left>
-          <img />
+          <img src= "assets/img/c.png"/>
         </ion-thumbnail>
         <h2>
-          m
+         c
         </h2>
-        <p>m comme dans maman</p>
-        <button ion-button icon-only item-right round outline>
+        <p>c comme dans tchao</p>
+        <button ion-button icon-only item-right round outline (click)='playc()'>
           <ion-icon name="volume-up" ></ion-icon>
         </button>
       </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/d.png"/>
+        </ion-thumbnail>
+        <h2>
+         d
+        </h2>
+        <p>d comme dans doute</p>
+        <button ion-button icon-only item-right round outline (click)='playd()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/ɖ.png"/>
+        </ion-thumbnail>
+        <h2>
+          ɖ
+        </h2>
+        <p>ɖ Se prononce comme "d", mais en
+          appuyant la pointe de la langue sur la
+          racine des dents</p>
+        <button ion-button icon-only item-right round outline (click)='playdd()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/f.png"/>
+        </ion-thumbnail>
+        <h2>
+          f
+        </h2>
+        <p>f comme dans foule</p>
+        <button ion-button icon-only item-right round outline (click)='playf()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/g.png" />
+        </ion-thumbnail>
+        <h2>
+          g
+        </h2>
+        <p>g comme dans gamin</p>
+        <button ion-button icon-only item-right round outline (click)='playg()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/gb.png"/>
+        </ion-thumbnail>
+        <h2>
+          gb
+        </h2>
+        <p>gb en un seul son</p>
+        <button ion-button icon-only item-right round outline (click)='playgb()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/h.png"/>
+        </ion-thumbnail>
+        <h2>
+          h
+        </h2>
+        <p>h Se prononce avec une expiration
+          venant de la poitrine</p>
+        <button ion-button icon-only item-right round outline (click)='playh()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/j.png"/>
+        </ion-thumbnail>
+        <h2>
+          j
+        </h2>
+        <p>j comme dans djin</p>
+        <button ion-button icon-only item-right round outline (click)='playj()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/k.png" />
+        </ion-thumbnail>
+        <h2>
+          k
+        </h2>
+        <p>k comme dans képi</p>
+        <button ion-button icon-only item-right round outline (click)='playk()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item><ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/kp.png"/>
+        </ion-thumbnail>
+        <h2>
+          kp
+        </h2>
+        <p>kp en un seul son</p>
+        <button ion-button icon-only item-right round outline (click)='playkp()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/l.png"/>
+        </ion-thumbnail>
+        <h2>
+          l
+        </h2>
+        <p>l comme lame, le R léger</p>
+        <button ion-button icon-only item-right round outline (click)='playl()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/m.png"/>
+        </ion-thumbnail>
+        <h2>
+         m
+        </h2>
+        <p>m comme dans marine</p>
+        <button ion-button icon-only item-right round outline (click)='playm()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/n.png"/>
+        </ion-thumbnail>
+        <h2>
+         n
+        </h2>
+        <p>n comme dans noce</p>
+        <button ion-button icon-only item-right round outline (click)='playn()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/ny.png"/>
+        </ion-thumbnail>
+        <h2>
+         ny
+        </h2>
+        <p>ny comme dans magnifique</p>
+        <button ion-button icon-only item-right round outline (click)='playny()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/p.png"/>
+        </ion-thumbnail>
+        <h2>
+         p
+        </h2>
+        <p>p comme dans pouce (n'existe pas
+          en fon sauf pɛpɛpɛ, pinpan, padri)</p>
+        <button ion-button icon-only item-right round outline (click)='playp()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item> 
+
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/s.png"/>
+        </ion-thumbnail>
+        <h2>
+         s
+        </h2>
+        <p>s comme dans sale</p>
+        <button ion-button icon-only item-right round outline (click)='plays()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/t.png"/>
+        </ion-thumbnail>
+        <h2>
+         t
+        </h2>
+        <p>comme dans tasse</p>
+        <button ion-button icon-only item-right round outline (click)='playt()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/v.png"/>
+        </ion-thumbnail>
+        <h2>
+         v
+        </h2>
+        <p>v comme dans vase</p>
+        <button ion-button icon-only item-right round outline (click)='playv()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/w.png"/>
+        </ion-thumbnail>
+        <h2>
+          w
+        </h2>
+        <p>w comme dans ouate</p>
+        <button ion-button icon-only item-right round outline (click)='playw()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/x.png"/>
+        </ion-thumbnail>
+        <h2>
+         x
+        </h2>
+        <p>x comme la jota espagnol se
+          prononçant avec la seule cavité
+          buccale</p>
+        <button ion-button icon-only item-right round outline (click)='playx()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/y.png"/>
+        </ion-thumbnail>
+        <h2>
+         y
+        </h2>
+        <p>y comme dans yaourt</p>
+        <button ion-button icon-only item-right round outline (click)='playy()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item color="none" id="alphabet-list-item5">
+        <ion-thumbnail item-left>
+          <img src= "assets/img/z.png"/>
+        </ion-thumbnail>
+        <h2>
+         z
+        </h2>
+        <p>z comme dans zone</p>
+        <button ion-button icon-only item-right round outline (click)='playz()'>
+          <ion-icon name="volume-up" ></ion-icon>
+        </button>
+      </ion-item>
+
+     
+
+
     </ion-list>
   </div>
 </ion-content>
