@@ -1,125 +1,5 @@
 webpackJsonp([0],{
 
-/***/ 100:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SmartAudioProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__ = __webpack_require__(194);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the SmartAudioProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var SmartAudioProvider = (function () {
-    function SmartAudioProvider(nativeAudio, platform) {
-        this.nativeAudio = nativeAudio;
-        this.audioType = 'html5';
-        this.sounds = [];
-        console.log('Hello SmartAudioProvider Provider');
-        if (platform.is('cordova')) {
-            this.audioType = 'native';
-        }
-    }
-    SmartAudioProvider.prototype.preload = function (key, asset) {
-        if (this.audioType === 'html5') {
-            var audio = {
-                key: key,
-                asset: asset,
-                type: 'html5'
-            };
-            this.sounds.push(audio);
-        }
-        else {
-            this.nativeAudio.preloadSimple(key, asset);
-            var audio = {
-                key: key,
-                asset: key,
-                type: 'native'
-            };
-            this.sounds.push(audio);
-        }
-    };
-    SmartAudioProvider.prototype.preloadN = function (key, asset) {
-        if (this.audioType === 'html5') {
-            var audio = {
-                key: key,
-                asset: asset,
-                type: 'html5'
-            };
-            this.sounds.push(audio);
-        }
-        else {
-            this.nativeAudio.preloadSimple(key, asset);
-            var audio = {
-                key: key,
-                asset: key,
-                type: 'native'
-            };
-            this.sounds.push(audio);
-        }
-    };
-    SmartAudioProvider.prototype.playN = function (key) {
-        var audio = this.sounds.find(function (sound) {
-            return sound.key === key;
-        });
-        if (audio.type === 'html5') {
-            var audioAsset = new Audio(audio.asset);
-            audioAsset.play();
-        }
-        else {
-            this.nativeAudio.play(audio.asset).then(function (res) {
-                console.log(res);
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    SmartAudioProvider.prototype.play = function (key) {
-        var audio = this.sounds.find(function (sound) {
-            return sound.key === key;
-        });
-        if (audio.type === 'html5') {
-            var audioAsset = new Audio(audio.asset);
-            audioAsset.play();
-        }
-        else {
-            this.nativeAudio.play(audio.asset).then(function (res) {
-                console.log(res);
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    return SmartAudioProvider;
-}());
-SmartAudioProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Platform */]])
-], SmartAudioProvider);
-
-//# sourceMappingURL=smart-audio.js.map
-
-/***/ }),
-
 /***/ 109:
 /***/ (function(module, exports) {
 
@@ -224,7 +104,7 @@ AccueilPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlphabetPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -376,6 +256,7 @@ AlphabetPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChiffresPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -387,17 +268,133 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ChiffresPage = (function () {
-    function ChiffresPage(navCtrl) {
+    function ChiffresPage(navCtrl, smartAudio) {
         this.navCtrl = navCtrl;
+        this.smartAudio = smartAudio;
     }
+    ChiffresPage.prototype.play0 = function () {
+        this.smartAudio.play('0');
+    };
+    ChiffresPage.prototype.play1 = function () {
+        this.smartAudio.play('1');
+    };
+    ChiffresPage.prototype.play2 = function () {
+        this.smartAudio.play('2');
+    };
+    ChiffresPage.prototype.play3 = function () {
+        this.smartAudio.play('3');
+    };
+    ChiffresPage.prototype.play4 = function () {
+        this.smartAudio.play('4');
+    };
+    ChiffresPage.prototype.play5 = function () {
+        this.smartAudio.play('5');
+    };
+    ChiffresPage.prototype.play6 = function () {
+        this.smartAudio.play('6');
+    };
+    ChiffresPage.prototype.play7 = function () {
+        this.smartAudio.play('7');
+    };
+    ChiffresPage.prototype.play8 = function () {
+        this.smartAudio.play('8');
+    };
+    ChiffresPage.prototype.play9 = function () {
+        this.smartAudio.play('9');
+    };
+    ChiffresPage.prototype.play10 = function () {
+        this.smartAudio.play('10');
+    };
+    ChiffresPage.prototype.play11 = function () {
+        this.smartAudio.play('11');
+    };
+    ChiffresPage.prototype.play12 = function () {
+        this.smartAudio.play('12');
+    };
+    ChiffresPage.prototype.play13 = function () {
+        this.smartAudio.play('13');
+    };
+    ChiffresPage.prototype.play14 = function () {
+        this.smartAudio.play('14');
+    };
+    ChiffresPage.prototype.play15 = function () {
+        this.smartAudio.play('15');
+    };
+    ChiffresPage.prototype.play16 = function () {
+        this.smartAudio.play('16');
+    };
+    ChiffresPage.prototype.play17 = function () {
+        this.smartAudio.play('17');
+    };
+    ChiffresPage.prototype.play18 = function () {
+        this.smartAudio.play('18');
+    };
+    ChiffresPage.prototype.play19 = function () {
+        this.smartAudio.play('19');
+    };
+    ChiffresPage.prototype.play20 = function () {
+        this.smartAudio.play('20');
+    };
+    ChiffresPage.prototype.play21 = function () {
+        this.smartAudio.play('21');
+    };
+    ChiffresPage.prototype.play22 = function () {
+        this.smartAudio.play('22');
+    };
+    ChiffresPage.prototype.play23 = function () {
+        this.smartAudio.play('23');
+    };
+    ChiffresPage.prototype.play24 = function () {
+        this.smartAudio.play('24');
+    };
+    ChiffresPage.prototype.play25 = function () {
+        this.smartAudio.play('25');
+    };
+    ChiffresPage.prototype.play26 = function () {
+        this.smartAudio.play('26');
+    };
+    ChiffresPage.prototype.play27 = function () {
+        this.smartAudio.play('27');
+    };
+    ChiffresPage.prototype.play28 = function () {
+        this.smartAudio.play('28');
+    };
+    ChiffresPage.prototype.play29 = function () {
+        this.smartAudio.play('29');
+    };
+    ChiffresPage.prototype.play30 = function () {
+        this.smartAudio.play('30');
+    };
+    ChiffresPage.prototype.play40 = function () {
+        this.smartAudio.play('40');
+    };
+    ChiffresPage.prototype.play50 = function () {
+        this.smartAudio.play('50');
+    };
+    ChiffresPage.prototype.play60 = function () {
+        this.smartAudio.play('60');
+    };
+    ChiffresPage.prototype.play70 = function () {
+        this.smartAudio.play('70');
+    };
+    ChiffresPage.prototype.play80 = function () {
+        this.smartAudio.play('80');
+    };
+    ChiffresPage.prototype.play90 = function () {
+        this.smartAudio.play('90');
+    };
+    ChiffresPage.prototype.play100 = function () {
+        this.smartAudio.play('100');
+    };
     return ChiffresPage;
 }());
 ChiffresPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-chiffres',template:/*ion-inline-start:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\chiffres\chiffres.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Chiffres\n    </ion-title>\n  </ion-navbar >\n</ion-header>\n<ion-content  id="page3" style="background-color:rgb(255, 255, 255);">\n  <ion-list id="chiffres-list8">\n    <ion-item color="none" id="chiffres-list-item9">\n      <ion-thumbnail item-left>\n        <img src="assets/img/0.png" />\n      </ion-thumbnail>\n      <h2>\n        0- Vɔ\n      </h2>\n      <p>Zéro</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item14">\n      <ion-thumbnail item-left>\n        <img src="assets/img/1.png" />\n      </ion-thumbnail>\n      <h2>\n        1- ɖe\n      </h2>\n      <p>Un</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item15">\n      <ion-thumbnail item-left>\n        <img src="assets/img/2.png" />\n      </ion-thumbnail>\n      <h2>\n        2 - We\n      </h2>\n      <p>Deux</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item16">\n      <ion-thumbnail item-left>\n        <img src="assets/img/3.png" />\n      </ion-thumbnail>\n      <h2>\n        3 - Atɔn\n      </h2>\n      <p>Trois</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item17">\n      <ion-thumbnail item-left>\n        <img src="assets/img/4 - Copie.png" />\n      </ion-thumbnail>\n      <h2>\n        4 - ɛnɛ\n      </h2>\n      <p>Quatre</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item18">\n      <ion-thumbnail item-left>\n        <img src="assets/img/5.png" />\n      </ion-thumbnail>\n      <h2>\n        5 - Atɔɔn\n      </h2>\n      <p>Cinq</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item19">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6.png" />\n      </ion-thumbnail>\n      <h2>\n        6 - Ayizɛn\n      </h2>\n      <p>Six</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item20">\n      <ion-thumbnail item-left>\n        <img src="assets/img/7.png" />\n      </ion-thumbnail>\n      <h2>\n        7-Tɛnwe\n      </h2>\n      <p>Sept</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item21">\n      <ion-thumbnail item-left>\n        <img src="assets/img/8.png" />\n      </ion-thumbnail>\n      <h2>\n        8 - Tantɔn\n      </h2>\n      <p>Huit</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/9.png" />\n      </ion-thumbnail>\n      <h2>\n        9-Tɛnnɛ\n      </h2>\n      <p>Neuf</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/10.png" />\n      </ion-thumbnail>\n      <h2>\n        10 - Wo\n      </h2>\n      <p>Dix</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/10.png" />\n      </ion-thumbnail>\n      <h2>\n       11 - wo-ɖokpo\n      </h2>\n      <p>Onze</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        12 - Wewe\n      </h2>\n      <p>Douze</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        13 - Watɔn\n      </h2>\n      <p>Treize</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        14 - Wɛnɛ\n      </h2>\n      <p>Quatorze</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        15 - Afɔtɔn\n      </h2>\n      <p>Quinze</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        16 - Afɔtɔn nukun ɖokpo\n      </h2>\n      <p>Seize</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        17 - Afɔtɔn nukun we\n      </h2>\n      <p>Dix-Sept</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       18 - Afɔtɔn nukun atɔn\n      </h2>\n      <p>Dix-huit</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        19 - Afɔtɔn nukun ɛnɛ\n      </h2>\n      <p>Dix-neuf</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       20 - Ko\n      </h2>\n      <p>Vingt</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        21 - Ko nukun ɖokpo\n      </h2>\n      <p>Vingt et un</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        22 - Ko nukun we\n      </h2>\n      <p>Vingt-deux</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       23 - Ko nukun atɔn\n      </h2>\n      <p>Vingt-trois</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        24 - Ko nukun ɛnɛ\n      </h2>\n      <p>Vingt-quatre</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        25 - Ko atɔɔn\n      </h2>\n      <p>Vingt-cinq</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        26 - Ko atɔɔn nukun ɖokpo\n      </h2>\n      <p>Vingt-six</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        27 - Ko atɔɔn nukun we\n      </h2>\n      <p>Vingt-sept</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        28 - Ko atɔɔn nukun atɔn\n      </h2>\n      <p>Vingt-huit</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        29 - Ko atɔɔn nukun ɛnɛ\n      </h2>\n      <p>Vingt-neuf</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        30 - Gban\n      </h2>\n      <p>Trente</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        40 - Kanɖe\n      </h2>\n      <p>Quarante</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        50 - Kanɖe wo\n      </h2>\n      <p>Cinquante</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        60 - Kanɖe ko\n      </h2>\n      <p>Soixante</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        70 - Kanɖe gban\n      </h2>\n      <p>Soixante-dix</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        80 - Kanwe\n      </h2>\n      <p>Quatre-vingt</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        90 - Kanwe wo\n      </h2>\n      <p>Quatre-vingt-dix</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        100 - Kanwe ko\n      </h2>\n      <p>Cent</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\chiffres\chiffres.html"*/
+        selector: 'page-chiffres',template:/*ion-inline-start:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\chiffres\chiffres.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Chiffres\n    </ion-title>\n  </ion-navbar >\n</ion-header>\n<ion-content  id="page3" style="background-color:rgb(255, 255, 255);">\n  <ion-list id="chiffres-list8">\n    <ion-item color="none" id="chiffres-list-item9">\n      <ion-thumbnail item-left>\n        <img src="assets/img/0.png" />\n      </ion-thumbnail>\n      <h2>\n        0- Vɔ\n      </h2>\n      <p>Zéro</p>\n      <button ion-button icon-only item-right round outline (click)=\'play0()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item14">\n      <ion-thumbnail item-left>\n        <img src="assets/img/1.png" />\n      </ion-thumbnail>\n      <h2>\n        1- ɖe\n      </h2>\n      <p>Un</p>\n      <button ion-button icon-only item-right round outline (click)=\'play1()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item15">\n      <ion-thumbnail item-left>\n        <img src="assets/img/2.png" />\n      </ion-thumbnail>\n      <h2>\n        2 - We\n      </h2>\n      <p>Deux</p>\n      <button ion-button icon-only item-right round outline (click)=\'play2()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item16">\n      <ion-thumbnail item-left>\n        <img src="assets/img/3.png" />\n      </ion-thumbnail>\n      <h2>\n        3 - Atɔn\n      </h2>\n      <p>Trois</p>\n      <button ion-button icon-only item-right round outline (click)=\'play3()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item17">\n      <ion-thumbnail item-left>\n        <img src="assets/img/4 - Copie.png" />\n      </ion-thumbnail>\n      <h2>\n        4 - ɛnɛ\n      </h2>\n      <p>Quatre</p>\n      <button ion-button icon-only item-right round outline (click)=\'play4()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item18">\n      <ion-thumbnail item-left>\n        <img src="assets/img/5.png" />\n      </ion-thumbnail>\n      <h2>\n        5 - Atɔɔn\n      </h2>\n      <p>Cinq</p>\n      <button ion-button icon-only item-right round outline (click)=\'play5()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item19">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6.png" />\n      </ion-thumbnail>\n      <h2>\n        6 - Ayizɛn\n      </h2>\n      <p>Six</p>\n      <button ion-button icon-only item-right round outline (click)=\'play6()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item20">\n      <ion-thumbnail item-left>\n        <img src="assets/img/7.png" />\n      </ion-thumbnail>\n      <h2>\n        7-Tɛnwe\n      </h2>\n      <p>Sept</p>\n      <button ion-button icon-only item-right round outline (click)=\'play7()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item21">\n      <ion-thumbnail item-left>\n        <img src="assets/img/8.png" />\n      </ion-thumbnail>\n      <h2>\n        8 - Tantɔn\n      </h2>\n      <p>Huit</p>\n      <button ion-button icon-only item-right round outline (click)=\'play8()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/9.png" />\n      </ion-thumbnail>\n      <h2>\n        9-Tɛnnɛ\n      </h2>\n      <p>Neuf</p>\n      <button ion-button icon-only item-right round outline (click)=\'play9()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/10.png" />\n      </ion-thumbnail>\n      <h2>\n        10 - Wo\n      </h2>\n      <p>Dix</p>\n      <button ion-button icon-only item-right round outline (click)=\'play10()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/10.png" />\n      </ion-thumbnail>\n      <h2>\n       11 - wo-ɖokpo\n      </h2>\n      <p>Onze</p>\n      <button ion-button icon-only item-right round outline (click)=\'play11()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        12 - Wewe\n      </h2>\n      <p>Douze</p>\n      <button ion-button icon-only item-right round outline (click)=\'play12()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        13 - Watɔn\n      </h2>\n      <p>Treize</p>\n      <button ion-button icon-only item-right round outline (click)=\'play13()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        14 - Wɛnɛ\n      </h2>\n      <p>Quatorze</p>\n      <button ion-button icon-only item-right round outline (click)=\'play14()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        15 - Afɔtɔn\n      </h2>\n      <p>Quinze</p>\n      <button ion-button icon-only item-right round outline (click)=\'play15()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        16 - Afɔtɔn nukun ɖokpo\n      </h2>\n      <p>Seize</p>\n      <button ion-button icon-only item-right round outline (click)=\'play16()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        17 - Afɔtɔn nukun we\n      </h2>\n      <p>Dix-Sept</p>\n      <button ion-button icon-only item-right round outline (click)=\'play17()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       18 - Afɔtɔn nukun atɔn\n      </h2>\n      <p>Dix-huit</p>\n      <button ion-button icon-only item-right round outline (click)=\'play18()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        19 - Afɔtɔn nukun ɛnɛ\n      </h2>\n      <p>Dix-neuf</p>\n      <button ion-button icon-only item-right round outline (click)=\'play19()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       20 - Ko\n      </h2>\n      <p>Vingt</p>\n      <button ion-button icon-only item-right round outline (click)=\'play20()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        21 - Ko nukun ɖokpo\n      </h2>\n      <p>Vingt et un</p>\n      <button ion-button icon-only item-right round outline (click)=\'play21()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        22 - Ko nukun we\n      </h2>\n      <p>Vingt-deux</p>\n      <button ion-button icon-only item-right round outline (click)=\'play22()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n       23 - Ko nukun atɔn\n      </h2>\n      <p>Vingt-trois</p>\n      <button ion-button icon-only item-right round outline (click)=\'play23()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        24 - Ko nukun ɛnɛ\n      </h2>\n      <p>Vingt-quatre</p>\n      <button ion-button icon-only item-right round outline (click)=\'play24()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        25 - Ko atɔɔn\n      </h2>\n      <p>Vingt-cinq</p>\n      <button ion-button icon-only item-right round outline (click)=\'play25()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        26 - Ko atɔɔn nukun ɖokpo\n      </h2>\n      <p>Vingt-six</p>\n      <button ion-button icon-only item-right round outline (click)=\'play26()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        27 - Ko atɔɔn nukun we\n      </h2>\n      <p>Vingt-sept</p>\n      <button ion-button icon-only item-right round outline (click)=\'play27()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        28 - Ko atɔɔn nukun atɔn\n      </h2>\n      <p>Vingt-huit</p>\n      <button ion-button icon-only item-right round outline (click)=\'play28()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        29 - Ko atɔɔn nukun ɛnɛ\n      </h2>\n      <p>Vingt-neuf</p>\n      <button ion-button icon-only item-right round outline (click)=\'play29()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        30 - Gban\n      </h2>\n      <p>Trente</p>\n      <button ion-button icon-only item-right round outline (click)=\'play30()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        40 - Kanɖe\n      </h2>\n      <p>Quarante</p>\n      <button ion-button icon-only item-right round outline (click)=\'play40()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        50 - Kanɖe wo\n      </h2>\n      <p>Cinquante</p>\n      <button ion-button icon-only item-right round outline (click)=\'play50()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        60 - Kanɖe ko\n      </h2>\n      <p>Soixante</p>\n      <button ion-button icon-only item-right round outline (click)=\'play60()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        70 - Kanɖe gban\n      </h2>\n      <p>Soixante-dix</p>\n      <button ion-button icon-only item-right round outline (click)=\'play70()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        80 - Kanwe\n      </h2>\n      <p>Quatre-vingt</p>\n      <button ion-button icon-only item-right round outline (click)=\'play80()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        90 - Kanwe wo\n      </h2>\n      <p>Quatre-vingt-dix</p>\n      <button ion-button icon-only item-right round outline (click)=\'play90()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n    <ion-item color="none" id="chiffres-list-item22">\n      <ion-thumbnail item-left>\n        <img src="assets/img/6yN9EjqKRXSkIoY9fDMG_tWc9HfbRpKeQcJbtXUSe_nine-706889_960_720.jpg" />\n      </ion-thumbnail>\n      <h2>\n        100 - Kanwe ko\n      </h2>\n      <p>Cent</p>\n      <button ion-button icon-only item-right round outline (click)=\'play100()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n      </button>\n    </ion-item>\n\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\chiffres\chiffres.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__["a" /* SmartAudioProvider */]])
 ], ChiffresPage);
 
 //# sourceMappingURL=chiffres.js.map
@@ -411,6 +408,7 @@ ChiffresPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlimentsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -422,17 +420,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AlimentsPage = (function () {
-    function AlimentsPage(navCtrl) {
+    function AlimentsPage(navCtrl, smartAudio) {
         this.navCtrl = navCtrl;
+        this.smartAudio = smartAudio;
     }
+    AlimentsPage.prototype.playma = function () {
+        this.smartAudio.play('ma');
+    };
+    AlimentsPage.prototype.playha = function () {
+        this.smartAudio.play('ha');
+    };
+    AlimentsPage.prototype.playnp = function () {
+        this.smartAudio.play('np');
+    };
+    AlimentsPage.prototype.plaync = function () {
+        this.smartAudio.play('nc');
+    };
+    AlimentsPage.prototype.playig = function () {
+        this.smartAudio.play('ig');
+    };
+    AlimentsPage.prototype.playpi = function () {
+        this.smartAudio.play('pi');
+    };
+    AlimentsPage.prototype.playoe = function () {
+        this.smartAudio.play('oe');
+    };
+    AlimentsPage.prototype.playga = function () {
+        this.smartAudio.play('ga');
+    };
+    AlimentsPage.prototype.playgo = function () {
+        this.smartAudio.play('go');
+    };
+    AlimentsPage.prototype.playgi = function () {
+        this.smartAudio.play('gi');
+    };
     return AlimentsPage;
 }());
 AlimentsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-aliments',template:/*ion-inline-start:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\aliments\aliments.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Aliments\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page4" style="background-color:rgb(255, 255, 255);">\n  <ion-list id="aliments-list9">\n    <ion-item color="none" id="aliments-list-item23">\n      <ion-thumbnail item-left>\n        <img src="assets/img/wv6a6YqjTSSeDcGPPmrU_maize.png" />\n      </ion-thumbnail>\n      <h2>\n        Gbade\n      </h2>\n      <p>Maïs</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item24">\n      <ion-thumbnail item-left>\n        <img src="assets/img/qLH8ToU0TpOuYUOtv0KS_beans.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Ayikun\n      </h2>\n      <p>Haricot</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item25">\n      <ion-thumbnail item-left>\n        <img src="assets/img/eP8KCDp4TOeaqdlg7FAp_np.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Dekin\n      </h2>\n      <p>Noix de Palme</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item26">\n      <ion-thumbnail item-left>\n        <img src="assets/img/DW8AQZ1mSlaS5Oq82r3f_coco.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Agonkɛ\n      </h2>\n      <p>Noix de Coco</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item27">\n      <ion-thumbnail item-left>\n        <img src="assets/img/DJbdgEMbTuCOZ7SRXUkD_yam.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Tévi\n      </h2>\n      <p>Igname</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item28">\n      <ion-thumbnail item-left>\n        <img src="assets/img/RmDJI8tdRMqgjcKBEOBH_pep.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Takin\n      </h2>\n      <p>Piment</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item29">\n      <ion-thumbnail item-left>\n        <img src="assets/img/5IppjJDSm9wC6PcVRXHQ_egg.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Azin</h2>\n        <p>Oeuf</p>\n        <button ion-button icon-only item-right round outline>\n            <ion-icon name="volume-up" ></ion-icon>\n          </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item30">\n      <ion-thumbnail item-left>\n        <img src="assets/img/eFgnLxWSQ6igAXxh68cp_foor.png" />\n      </ion-thumbnail>\n      <h2>\n        Gari\n      </h2>\n      <p>Gari</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item31">\n      <ion-thumbnail item-left>\n        <img src="assets/img/aLY8PGpfTuCibWf5dtfN_okra.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Févi\n      </h2>\n      <p>Gombo</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item32">\n      <ion-thumbnail item-left>\n        <img src="assets/img/RULQDocYRuOoAQzDLYVz_gin.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Dotɛ\n      </h2>\n      <p>Gingembre</p>\n      <button ion-button icon-only item-right round outline>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\aliments\aliments.html"*/
+        selector: 'page-aliments',template:/*ion-inline-start:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\aliments\aliments.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Aliments\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page4" style="background-color:rgb(255, 255, 255);">\n  <ion-list id="aliments-list9">\n    <ion-item color="none" id="aliments-list-item23">\n      <ion-thumbnail item-left>\n        <img src="assets/img/wv6a6YqjTSSeDcGPPmrU_maize.png" />\n      </ion-thumbnail>\n      <h2>\n        Gbade\n      </h2>\n      <p>Maïs</p>\n      <button ion-button icon-only item-right round outline (click)=\'playma()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item24">\n      <ion-thumbnail item-left>\n        <img src="assets/img/qLH8ToU0TpOuYUOtv0KS_beans.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Ayikun\n      </h2>\n      <p>Haricot</p>\n      <button ion-button icon-only item-right round outline (click)=\'playha()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item25">\n      <ion-thumbnail item-left>\n        <img src="assets/img/eP8KCDp4TOeaqdlg7FAp_np.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Dekin\n      </h2>\n      <p>Noix de Palme</p>\n      <button ion-button icon-only item-right round outline (click)=\'playnp()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item26">\n      <ion-thumbnail item-left>\n        <img src="assets/img/DW8AQZ1mSlaS5Oq82r3f_coco.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Agonkɛ\n      </h2>\n      <p>Noix de Coco</p>\n      <button ion-button icon-only item-right round outline (click)=\'plaync()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item27">\n      <ion-thumbnail item-left>\n        <img src="assets/img/DJbdgEMbTuCOZ7SRXUkD_yam.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Tévi\n      </h2>\n      <p>Igname</p>\n      <button ion-button icon-only item-right round outline (click)=\'playig()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item28">\n      <ion-thumbnail item-left>\n        <img src="assets/img/RmDJI8tdRMqgjcKBEOBH_pep.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Takin\n      </h2>\n      <p>Piment</p>\n      <button ion-button icon-only item-right round outline (click)=\'playpi()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item29">\n      <ion-thumbnail item-left>\n        <img src="assets/img/5IppjJDSm9wC6PcVRXHQ_egg.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Azin</h2>\n        <p>Oeuf</p>\n        <button ion-button icon-only item-right round outline (click)=\'playoe()\'>\n            <ion-icon name="volume-up" ></ion-icon>\n          </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item30">\n      <ion-thumbnail item-left>\n        <img src="assets/img/eFgnLxWSQ6igAXxh68cp_foor.png" />\n      </ion-thumbnail>\n      <h2>\n        Gari\n      </h2>\n      <p>Gari</p>\n      <button ion-button icon-only item-right round outline (click)=\'playga()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item31">\n      <ion-thumbnail item-left>\n        <img src="assets/img/aLY8PGpfTuCibWf5dtfN_okra.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Févi\n      </h2>\n      <p>Gombo</p>\n      <button ion-button icon-only item-right round outline (click)=\'playgo()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n    <ion-item color="none" id="aliments-list-item32">\n      <ion-thumbnail item-left>\n        <img src="assets/img/RULQDocYRuOoAQzDLYVz_gin.jpg" />\n      </ion-thumbnail>\n      <h2>\n        Dotɛ\n      </h2>\n      <p>Gingembre</p>\n      <button ion-button icon-only item-right round outline (click)=\'playgi()\'>\n          <ion-icon name="volume-up" ></ion-icon>\n        </button>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"C:\Users\Parikiri13\Documents\Ionic\Ionic2\localapplanguage\src\pages\aliments\aliments.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_smart_audio_smart_audio__["a" /* SmartAudioProvider */]])
 ], AlimentsPage);
 
 //# sourceMappingURL=aliments.js.map
@@ -577,7 +607,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_sms__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_social_sharing__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_audio__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_smart_audio_smart_audio__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_smart_audio_smart_audio__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -654,7 +684,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_smart_audio_smart_audio__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_smart_audio_smart_audio__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_accueil_accueil__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -715,6 +745,54 @@ var MyApp = (function () {
             smartAudio.preload('x', 'assets/audioLib/consonnes/x.mp3');
             smartAudio.preload('y', 'assets/audioLib/consonnes/y.mp3');
             smartAudio.preload('z', 'assets/audioLib/consonnes/z.mp3');
+            smartAudio.preload('0', 'assets/audioLib/chiffre/0.mp3');
+            smartAudio.preload('1', 'assets/audioLib/chiffre/1.mp3');
+            smartAudio.preload('2', 'assets/audioLib/chiffre/2.mp3');
+            smartAudio.preload('3', 'assets/audioLib/chiffre/3.mp3');
+            smartAudio.preload('4', 'assets/audioLib/chiffre/4.mp3');
+            smartAudio.preload('5', 'assets/audioLib/chiffre/5.mp3');
+            smartAudio.preload('6', 'assets/audioLib/chiffre/6.mp3');
+            smartAudio.preload('7', 'assets/audioLib/chiffre/7.mp3');
+            smartAudio.preload('8', 'assets/audioLib/chiffre/8.mp3');
+            smartAudio.preload('9', 'assets/audioLib/chiffre/9.mp3');
+            smartAudio.preload('10', 'assets/audioLib/chiffre/10.mp3');
+            smartAudio.preload('11', 'assets/audioLib/chiffre/11.mp3');
+            smartAudio.preload('12', 'assets/audioLib/chiffre/12.mp3');
+            smartAudio.preload('13', 'assets/audioLib/chiffre/13.mp3');
+            smartAudio.preload('14', 'assets/audioLib/chiffre/14.mp3');
+            smartAudio.preload('15', 'assets/audioLib/chiffre/15.mp3');
+            smartAudio.preload('16', 'assets/audioLib/chiffre/16.mp3');
+            smartAudio.preload('17', 'assets/audioLib/chiffre/17.mp3');
+            smartAudio.preload('18', 'assets/audioLib/chiffre/18.mp3');
+            smartAudio.preload('19', 'assets/audioLib/chiffre/19.mp3');
+            smartAudio.preload('20', 'assets/audioLib/chiffre/20.mp3');
+            smartAudio.preload('21', 'assets/audioLib/chiffre/21.mp3');
+            smartAudio.preload('22', 'assets/audioLib/chiffre/22.mp3');
+            smartAudio.preload('23', 'assets/audioLib/chiffre/23.mp3');
+            smartAudio.preload('24', 'assets/audioLib/chiffre/24.mp3');
+            smartAudio.preload('25', 'assets/audioLib/chiffre/25.mp3');
+            smartAudio.preload('26', 'assets/audioLib/chiffre/26.mp3');
+            smartAudio.preload('27', 'assets/audioLib/chiffre/27.mp3');
+            smartAudio.preload('28', 'assets/audioLib/chiffre/28.mp3');
+            smartAudio.preload('29', 'assets/audioLib/chiffre/29.mp3');
+            smartAudio.preload('30', 'assets/audioLib/chiffre/30.mp3');
+            smartAudio.preload('40', 'assets/audioLib/chiffre/40.mp3');
+            smartAudio.preload('50', 'assets/audioLib/chiffre/50.mp3');
+            smartAudio.preload('60', 'assets/audioLib/chiffre/60.mp3');
+            smartAudio.preload('70', 'assets/audioLib/chiffre/70.mp3');
+            smartAudio.preload('80', 'assets/audioLib/chiffre/80.mp3');
+            smartAudio.preload('90', 'assets/audioLib/chiffre/90.mp3');
+            smartAudio.preload('100', 'assets/audioLib/chiffre/1000.mp3');
+            smartAudio.preload('ma', 'assets/audioLib/food/ma.mp3');
+            smartAudio.preload('ha', 'assets/audioLib/food/ha.mp3');
+            smartAudio.preload('np', 'assets/audioLib/food/no.mp3');
+            smartAudio.preload('nc', 'assets/audioLib/food/nc.mp3');
+            smartAudio.preload('ig', 'assets/audioLib/food/ig.mp3');
+            smartAudio.preload('pi', 'assets/audioLib/food/pi.mp3');
+            smartAudio.preload('oe', 'assets/audioLib/food/oe.mp3');
+            smartAudio.preload('ga', 'assets/audioLib/food/ga.mp3');
+            smartAudio.preload('go', 'assets/audioLib/food/go.mp3');
+            smartAudio.preload('gi', 'assets/audioLib/food/gi.mp3');
         });
     }
     return MyApp;
@@ -726,6 +804,126 @@ MyApp = __decorate([
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 41:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SmartAudioProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__ = __webpack_require__(194);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the SmartAudioProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var SmartAudioProvider = (function () {
+    function SmartAudioProvider(nativeAudio, platform) {
+        this.nativeAudio = nativeAudio;
+        this.audioType = 'html5';
+        this.sounds = [];
+        console.log('Hello SmartAudioProvider Provider');
+        if (platform.is('cordova')) {
+            this.audioType = 'native';
+        }
+    }
+    SmartAudioProvider.prototype.preload = function (key, asset) {
+        if (this.audioType === 'html5') {
+            var audio = {
+                key: key,
+                asset: asset,
+                type: 'html5'
+            };
+            this.sounds.push(audio);
+        }
+        else {
+            this.nativeAudio.preloadSimple(key, asset);
+            var audio = {
+                key: key,
+                asset: key,
+                type: 'native'
+            };
+            this.sounds.push(audio);
+        }
+    };
+    SmartAudioProvider.prototype.preloadN = function (key, asset) {
+        if (this.audioType === 'html5') {
+            var audio = {
+                key: key,
+                asset: asset,
+                type: 'html5'
+            };
+            this.sounds.push(audio);
+        }
+        else {
+            this.nativeAudio.preloadSimple(key, asset);
+            var audio = {
+                key: key,
+                asset: key,
+                type: 'native'
+            };
+            this.sounds.push(audio);
+        }
+    };
+    SmartAudioProvider.prototype.playN = function (key) {
+        var audio = this.sounds.find(function (sound) {
+            return sound.key === key;
+        });
+        if (audio.type === 'html5') {
+            var audioAsset = new Audio(audio.asset);
+            audioAsset.play();
+        }
+        else {
+            this.nativeAudio.play(audio.asset).then(function (res) {
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    SmartAudioProvider.prototype.play = function (key) {
+        var audio = this.sounds.find(function (sound) {
+            return sound.key === key;
+        });
+        if (audio.type === 'html5') {
+            var audioAsset = new Audio(audio.asset);
+            audioAsset.play();
+        }
+        else {
+            this.nativeAudio.play(audio.asset).then(function (res) {
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    return SmartAudioProvider;
+}());
+SmartAudioProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Platform */]])
+], SmartAudioProvider);
+
+//# sourceMappingURL=smart-audio.js.map
 
 /***/ })
 
