@@ -37,6 +37,7 @@
         "cordova-plugin-crosswalk-webview": "^2.3.0",
         "cordova-plugin-device": "^1.1.6",
         "cordova-plugin-inappbrowser": "^1.7.1",
+        "cordova-plugin-ionic": "^2.0.3",
         "cordova-plugin-ionic-webview": "^1.1.15",
         "cordova-plugin-ionic-wkkeyboard": "^1.1.11",
         "cordova-plugin-nativeaudio": "^3.0.9",
@@ -80,7 +81,12 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-nativeaudio": {},
             "cordova-sms-plugin": {},
-            "cordova-plugin-x-socialsharing": {}
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-ionic": {
+                "APP_ID": "086f5363",
+                "CHANNEL_NAME": "Master",
+                "UPDATE_METHOD": "background"
+            }
         }
     }
 }
