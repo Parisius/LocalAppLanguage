@@ -96,11 +96,11 @@ export class MyApp {
       smartAudio.preload('70', 'assets/audioLib/chiffre/70.mp3');
       smartAudio.preload('80', 'assets/audioLib/chiffre/80.mp3');
       smartAudio.preload('90', 'assets/audioLib/chiffre/90.mp3');
-      smartAudio.preload('100', 'assets/audioLib/chiffre/1000.mp3');
+      smartAudio.preload('100', 'assets/audioLib/chiffre/100.mp3');
 
       smartAudio.preload('ma', 'assets/audioLib/food/ma.mp3');
       smartAudio.preload('ha', 'assets/audioLib/food/ha.mp3');
-      smartAudio.preload('np', 'assets/audioLib/food/no.mp3');
+      smartAudio.preload('np', 'assets/audioLib/food/np.mp3');
       smartAudio.preload('nc', 'assets/audioLib/food/nc.mp3');
       smartAudio.preload('ig', 'assets/audioLib/food/ig.mp3');
       smartAudio.preload('pi', 'assets/audioLib/food/pi.mp3');
